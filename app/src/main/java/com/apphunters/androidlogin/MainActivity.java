@@ -20,13 +20,19 @@ public class MainActivity extends AppCompatActivity  {
         fragtrns = fragmgr.beginTransaction();
         fragframe = (FrameLayout) findViewById(R.id.fragmentframe);
         //if the android is being restarted
-        if(savedInstanceState != null)
-            return;
-
         SignIn signInFrag = new SignIn();
 
-        //just incase fragment was called
         signInFrag.setArguments(getIntent().getExtras());
+
+        if(savedInstanceState != null)
+        {
+
+        }
+
+
+
+        //just incase fragment was called
+
 
         //adding fragment to container with tag
         fragtrns.add(R.id.fragmentframe,signInFrag,"signin").commit();

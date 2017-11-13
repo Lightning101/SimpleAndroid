@@ -8,32 +8,55 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/SigninFrameLayout">
+        android:id="@+id/SigninFrameLayout"
+        >
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/ProgressOverLap">
+            android:id="@+id/ProgressOverLap"
+            >
+
             <ProgressBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:id="@+id/Progressbar"/>
+                android:id="@+id/Progressbar"
+                android:scrollbarSize="20sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:text="Please Wait"
+                android:layout_centerHorizontal="true"
+                android:layout_above="@id/Progressbar"/>
+
         </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/backsb">
+        android:background="@drawable/back"
+        >
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginStart="147dp"
-            android:layout_marginTop="103dp"
+            android:layout_marginTop="57dp"
             android:text="Sign In"
             android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/password"
+            android:layout_below="@+id/password"
+            android:layout_marginTop="14dp"
+            android:textColor="#FF0000"
+            android:ems="13"
+            android:visibility="gone"
+            android:textSize="30sp"/>
 
         <EditText
             android:id="@+id/username"
@@ -65,17 +88,18 @@
             android:id="@+id/signin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/password"
+            android:layout_below="@id/help"
             android:layout_marginTop="64dp"
             android:layout_toEndOf="@id/textView"
-            android:text="Signin" />
+            android:text="Signin"
+            />
 
         <Button
             android:id="@+id/signup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@id/signin"
-            android:layout_alignBottom="@id/signin"
+            android:layout_alignBottom="@id/help"
             android:layout_alignParentStart="true"
             android:layout_marginStart="72dp"
             android:text="SignUp" />
