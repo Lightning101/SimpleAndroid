@@ -69,7 +69,6 @@ public class SignIn extends PortFragmentClass {
     TextView help;
     Button signinView;
     Button signupView;
-    String transferedUsername;
     boolean inProgress;
     ProgressBar progressbar;
     FrameLayout root;

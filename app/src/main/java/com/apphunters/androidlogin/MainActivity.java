@@ -47,17 +47,18 @@ public class MainActivity extends AppCompatActivity implements ChangeFragmentLis
     public void updateFragment(ChangeFragmentRequestor chg) {
 
         PortFragmentClass temp = sigfact.getFragment(chg.getFragmentName());
-        fragmgr.beginTransaction().replace(R.id.fragmentframe,temp,"signup").addToBackStack(null).commit();
+        temp.addChangeFragmentListner(this);
+       fragmgr.beginTransaction().replace(R.id.fragmentframe,temp,"signup").addToBackStack(null).commit();
 
     }
 
     @Override
     public void addChangeFragmentRequestor(ChangeFragmentRequestor chg) {
-
+        changReq.add(chg);
     }
 
     @Override
     public void removeChangeFragmentRequestor(ChangeFragmentRequestor chg) {
-
+        changReq.remove(chg);
     }
 }

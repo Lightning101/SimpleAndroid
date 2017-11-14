@@ -34,7 +34,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/backsb"
+        android:background="@drawable/backrere"
         >
 
         <TextView
@@ -44,7 +44,8 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="57dp"
             android:text="Sign In"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:textColor="#000000"/>
 
         <TextView
             android:id="@+id/help"
@@ -79,8 +80,8 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="51dp"
             android:ems="10"
-            android:hint="Password"
             android:inputType="textPassword"
+            android:hint="Password"
             android:textColorHint="#000000"
             />
 
@@ -91,7 +92,7 @@
             android:layout_below="@id/help"
             android:layout_marginTop="64dp"
             android:layout_toEndOf="@id/textView"
-            android:text="Signin"
+            android:text="Sign in"
             />
 
         <Button
@@ -102,7 +103,7 @@
             android:layout_alignBottom="@id/help"
             android:layout_alignParentStart="true"
             android:layout_marginStart="72dp"
-            android:text="SignUp" />
+            android:text="Sign Up" />
     </RelativeLayout>
 
 
