@@ -6,7 +6,7 @@ package com.apphunters.androidlogin;
 
 public interface ChangeFragmentListner {
 
-    public void updateFragment(ChangeFragmentListner chg);
+    public void updateFragment(ChangeFragmentRequestor chg);
 
     public void addChangeFragmentRequestor(ChangeFragmentRequestor chg);
 

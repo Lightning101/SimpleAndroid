@@ -5,9 +5,105 @@
     tools:context="com.apphunters.androidlogin.SignUp">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@drawable/backsb"
+        >
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="21dp"
+            android:text="SIGNUP FORM"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/signup-firstname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="29dp"
+            android:ems="10"
+            android:hint="First Name"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/signup-lastname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/signup-firstname"
+            android:layout_below="@+id/signup-firstname"
+            android:layout_marginTop="11dp"
+            android:ems="10"
+            android:hint="Last Name"
+            android:inputType="textPersonName"
+            android:textColor="#000000"
+            android:textColorHint="#000000" />
+
+        <EditText
+            android:id="@+id/signup-usrname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/signup-lastname"
+            android:layout_below="@+id/signup-lastname"
+            android:layout_marginTop="21dp"
+            android:ems="10"
+            android:hint="Username"
+            android:inputType="textPersonName"
+            android:textColor="#000000"
+            android:textColorHint="#000000" />
+
+        <EditText
+            android:id="@+id/signup-email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/signup-usrname"
+            android:layout_below="@+id/signup-usrname"
+            android:layout_marginTop="19dp"
+            android:ems="10"
+            android:hint="Email"
+            android:inputType="textPersonName"
+            android:textColor="#000000"
+            android:textColorHint="#000000" />
+
+        <EditText
+            android:id="@+id/signup-password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/signup-email"
+            android:layout_below="@+id/signup-email"
+            android:layout_marginTop="21dp"
+            android:ems="10"
+            android:hint="Password"
+            android:textColor="#000000"
+            android:textColorHint="#000000" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/signup-help"
+            android:layout_centerHorizontal="true"
+            android:text="Signup"/>
+
+        <EditText
+            android:id="@+id/signup-help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/signup-password"
+            android:layout_below="@+id/signup-password"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:visibility="gone"
+            android:textColor="#FF0000" />
+
+
+    </RelativeLayout>
 
 </FrameLayout>

@@ -2,6 +2,7 @@ package com.apphunters.androidlogin;
 
 import android.app.Fragment;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
@@ -22,10 +23,46 @@ import com.mongodb.client.MongoDatabase;
 
 import org.bson.Document;
 
+import java.util.ArrayList;
+
 import static com.mongodb.client.model.Filters.eq;
 
 
-public class SignIn extends Fragment {
+public class SignIn extends PortFragmentClass {
+
+    ArrayList<ChangeFragmentListner> crl;
+
+    String fragmentName;
+
+
+    @Override
+    public void addChangeFragmentListner(ChangeFragmentListner chg) {
+        crl.add(chg);
+    }
+
+    @Override
+    public void requestFragmentChange() {
+
+        for(ChangeFragmentListner ch: crl)
+        {
+            ch.updateFragment(this);
+        }
+    }
+
+    @Override
+    public void removeChangeFragmentListner(ChangeFragmentListner chg) {
+        crl.remove(chg);
+    }
+
+    @Override
+    public String getFragmentName() {
+        return this.fragmentName;
+    }
+
+    @Override
+    public void setFragmentName(String name) {
+        this.fragmentName = name;
+    }
 
     EditText userNameView;
     EditText passwordView;
@@ -38,7 +75,7 @@ public class SignIn extends Fragment {
     FrameLayout root;
 
     public SignIn() {
-
+        crl = new ArrayList<>();
     }
 
     // TODO: Rename and change types and number of parameters
@@ -54,6 +91,7 @@ public class SignIn extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
     }
 
@@ -84,9 +122,22 @@ public class SignIn extends Fragment {
                 onSignClicked(view);
             }
         });
+        signupView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onSignUpClicked(view);
+            }
+        });
 
     }
 
+
+    public void onSignUpClicked(View v)
+    {
+
+        setFragmentName("signup");
+        requestFragmentChange();
+    }
 
 
     public void onSignClicked(View v)
@@ -140,10 +191,13 @@ public class SignIn extends Fragment {
 
             if(username.equals(document.getString("username")) && password.equals(document.getString("password")) )
             {
-                
-                String temp = " congradulations you are now loged in " +document.getString("first_name")+ "  "+document.getString("last_name");
-                help.setText(temp);
-                help.setVisibility(View.VISIBLE);
+
+                //String temp = " congradulations you are now loged in " +document.getString("first_name")+ "  "+document.getString("last_name");
+                //help.setText(temp);
+                //help.setVisibility(View.VISIBLE);
+                Intent tent = new Intent(getActivity(),Home.class);
+                tent.putExtra("detials",document.getString("first_name")+ "  "+document.getString("last_name"));
+                startActivity(tent);
             }else
             {
                 help.setText("Password Or Username is Incorrect");
