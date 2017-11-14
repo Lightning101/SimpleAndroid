@@ -151,7 +151,7 @@ public class SignUp extends PortFragmentClass {
                 doc.put("email", eamilView.getText().toString());
                 doc.put("password", passwordView.getText().toString());
 
-                System.out.println(doc.toString());
+                //System.out.println(doc.toString());
                 new UpdateUserDetials("mongodb://root:sean1996@ds159254.mlab.com:59254/test1.user").execute(doc);
             }
         }else
@@ -210,10 +210,10 @@ public class SignUp extends PortFragmentClass {
                 coll.insertOne(docs[0]);
             }
             catch (MongoServerException ex) {
-                System.out.println("sadasdasds here 2");
+                //System.out.println("sadasdasds here 2");
                 return false;
             }
-            System.out.println("sadasdasds here 1");
+            //System.out.println("sadasdasds here 1");
 
             return true;
 
