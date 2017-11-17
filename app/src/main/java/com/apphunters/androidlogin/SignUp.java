@@ -152,7 +152,7 @@ public class SignUp extends PortFragmentClass {
                 doc.put("password", passwordView.getText().toString());
 
                 //System.out.println(doc.toString());
-                new UpdateUserDetials("mongodb://root:sean1996@ds159254.mlab.com:59254/test1.user").execute(doc);
+                new UpdateUserDetials("mongodb://root:/* password here*/@ds159254.mlab.com:59254/test1.user").execute(doc);
             }
         }else
         {
