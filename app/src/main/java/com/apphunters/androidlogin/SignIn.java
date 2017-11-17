@@ -156,7 +156,7 @@ public class SignIn extends PortFragmentClass {
                 root.addView(basesign);
                 root.addView(baseprog);
 
-                new GetUserDetials("mongodb://root:sean1996@ds159254.mlab.com:59254/test1.user", progressbar).execute(username);
+                new GetUserDetials("mongodb://root:/* password here*/@ds159254.mlab.com:59254/test1.user", progressbar).execute(username);
 
             }
 
